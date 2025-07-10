@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <title>EduSite - Apprends facilement</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+ 
+</head>
+<body>
+
+<header>
+  <h1>EduSite</h1>
+  <nav>
+    <a href="#home"><i class="fas fa-home"></i>Accueil</a>
+    <a href="#courses"><i class="fas fa-book"></i>Cours</a>
+    <a href="#faq"><i class="fas fa-question-circle"></i>FAQ</a>
+    <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h2>Apprenez facilement, n'importe où</h2>
+  <p>Des cours gratuits et interactifs pour tous les niveaux. Commencez votre parcours dès maintenant !</p>
+  <button onclick="scrollToCourses()">Voir les cours</button>
+</section>
+
+<main>
+  <section class="courses" id="courses">
+    <h3>Nos Cours Populaires</h3>
+    <div class="course-list">
+      <div class="course-card">
+
+        
+
+        <h4>HTML & CSS Débutant</h4>
+        <p>Créez des sites web modernes avec HTML5 et CSS3.</p>
+        <button onclick="showCourseContent('html', 'p1.html')">S’inscrire</button>
+        
+      </div>
+      <div class="course-card">
+        <h4>JavaScript pour Tous</h4>
+        <p>Apprenez le langage du web et développez des sites dynamiques.</p>
+        <button onclick="showCourseContent('js', 'p2.html')">S’inscrire</button>
+      </div>
+      <div class="course-card">
+        <h4>Python pour Débutants</h4>
+        <p>Découvrez les bases de la programmation avec Python.</p>
+        <button onclick="showCourseContent('python', 'p3.html')">S’inscrire</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zone d'affichage du contenu dynamique -->
+  <section id="courseDetails" style="display:none;">
+    <h3>Détails du cours</h3>
+    <div id="courseContent"></div>
+  </section>
+
+  <section class="faq" id="faq">
+    <h3>Foire aux Questions</h3>
+    <div class="faq-item">
+      <div class="faq-question">Comment m'inscrire ?</div>
+      <div class="faq-answer">Cliquez sur le bouton "S’inscrire" à côté du cours choisi.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Les cours sont-ils gratuits ?</div>
+      <div class="faq-answer">Oui, tous nos cours sont 100% gratuits.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Puis-je apprendre à mon rythme ?</div>
+      <div class="faq-answer">Bien sûr ! Nos cours sont accessibles 24h/24.</div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h3>À propos d’EduSite</h3>
+    <p>EduSite est une plateforme 100% gratuite dédiée à l’apprentissage accessible à tous. Elle offre des contenus pédagogiques interactifs, des cours pratiques, et une communauté pour vous accompagner.</p>
+  </section>
+
+  <section class="testimonials">
+    <h3>Avis des étudiants</h3>
+    <div>
+      <p>“J’ai adoré le cours HTML. Très clair et bien structuré.”</p>
+      <strong>- Salma</strong>
+    </div>
+    <div>
+      <p>“Une excellente plateforme pour apprendre à distance.”</p>
+      <strong>- Mehdi</strong>
+    </div>
+  </section>
+
+  <section class="blog">
+    <h3>Articles récents</h3>
+    <article>
+      <h4>Pourquoi apprendre le HTML en 2025 ?</h4>
+      <p>Le HTML est la base du web. Il reste incontournable pour créer des sites modernes.</p>
+    </article>
+    <article>
+      <h4>Les 5 erreurs fréquentes en CSS</h4>
+      <p>Apprenez à éviter les erreurs courantes en mettant en pratique des bonnes techniques.</p>
+    </article>
+  </section>
+
+  <section class="newsletter">
+    <h3>Inscrivez-vous à notre newsletter</h3>
+    <form onsubmit="newsletterSignup(event)">
+      <input type="email" placeholder="Votre adresse email" required>
+      <button type="submit">S'abonner</button>
+    </form>
+  </section>
+</main>
+
+<footer id="contact">
+  <p>Contact : contact@edusite.com | +212 6 00 00 00 00</p>
+  <p>&copy; 2025 EduSite. Tous droits réservés.</p>
+</footer>
+
+<!-- MODAL FORMULAIRE -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h3>Inscription au cours</h3>
+    <form onsubmit="submitForm(event)">
+      <label>Nom du cours :</label>
+      <input type="text" id="courseName" name="course" readonly />
+
+      <label>Votre nom :</label>
+      <input type="text" name="username" required />
+
+      <label>Email :</label>
+      <input type="email" name="email" required />
+
+      <button type="submit">Valider l’inscription</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function scrollToCourses() {
+    document.getElementById('courses').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(q => {
+    q.addEventListener('click', () => {
+      const active = document.querySelector('.faq-question.active');
+      if (active && active !== q) {
+        active.classList.remove('active');
+        active.nextElementSibling.classList.remove('open');
+      }
+      q.classList.toggle('active');
+      q.nextElementSibling.classList.toggle('open');
+    });
+  });
+
+  // Contenus des cours
+  const coursesContent = {
+    html: `
+      <h4>HTML & CSS Débutant</h4>
+      <p>Apprenez à créer des pages web avec HTML5 et stylisez-les avec CSS3.</p>
+      <ul>
+        <li>Introduction au HTML</li>
+        <li>Les balises essentielles</li>
+        <li>Introduction au CSS</li>
+        <li>Mise en page simple</li>
+      </ul>
+    `,
+    js: `
+      <h4>JavaScript pour Tous</h4>
+      <p>Maîtrisez les bases de JavaScript pour rendre vos pages web interactives.</p>
+      <ul>
+        <li>Syntaxe et variables</li>
+        <li>Fonctions et événements</li>
+        <li>Manipulation du DOM</li>
+        <li>Introduction à AJAX</li>
+      </ul>
+    `,
+    python: `
+      <h4>Python pour Débutants</h4>
+      <p>Découvrez la programmation avec Python, un langage simple et puissant.</p>
+      <ul>
+        <li>Variables et types</li>
+        <li>Structures conditionnelles</li>
+        <li>Boucles</li>
+        <li>Fonctions</li>
+      </ul>
+    `
+  };
+
+  let currentRedirectPage = '';  // variable globale pour mémoriser la page cible
+
+function showCourseContent(courseKey, page) {
+  const courseDetailsSection = document.getElementById('courseDetails');
+  const courseContentDiv = document.getElementById('courseContent');
+  courseContentDiv.innerHTML = coursesContent[courseKey] || '<p>Contenu non disponible.</p>';
+  courseDetailsSection.style.display = 'block';
+
+  // Mettre à jour le champ du formulaire modal pour inscription
+  document.getElementById('courseName').value = document.querySelector(`button[onclick="showCourseContent('${courseKey}', '${page}')"]`).parentElement.querySelector('h4').textContent;
+
+  // Afficher aussi la fenêtre modale d'inscription
+  document.getElementById('modal').classList.remove('hidden');
+
+  // Mémoriser la page vers laquelle rediriger après inscription
+  currentRedirectPage = page;
+}
+
+
+  function openModal(course) {
+    document.getElementById('courseName').value = course;
+    document.getElementById('modal').classList.remove('hidden');
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
+  }
+  function submitForm(e) {
+  e.preventDefault();
+  alert("Inscription réussie !");
+  closeModal();
+  if (currentRedirectPage) {
+    window.location.href = currentRedirectPage;
+  }
+}
+
+  function newsletterSignup(e) {
+    e.preventDefault();
+    alert("Merci pour votre inscription !");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cours HTML & CSS Débutant - EduSite</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #333;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #1c2833;
+      border-bottom: 3px solid #f1c40f;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      color: #16a085;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    code {
+      background: #e8f1f2;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 1rem;
+      color: #d6336c;
+    }
+    pre {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+    ul {
+      margin-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    a {
+      color: #f1c40f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ddd;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML & CSS Débutant</h1>
+  <p>Bienvenue dans ce cours d’introduction à HTML et CSS. Vous allez apprendre à créer une page web simple et à la styliser.</p>
+
+  <h2>1. Qu’est-ce que HTML ?</h2>
+  <p>HTML (HyperText Markup Language) est le langage qui structure une page web. Il organise le contenu en titres, paragraphes, listes, images, liens, etc.</p>
+
+  <h2>2. Structure de base d’une page HTML</h2>
+  <p>Voici un exemple minimaliste d’une page HTML :</p>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Ma page web&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Bienvenue sur mon site&lt;/h1&gt;
+    &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code></pre>
+
+  <h2>3. Les balises principales</h2>
+  <ul>
+    <li><code>&lt;h1&gt; ... &lt;/h1&gt;</code> : Titre principal</li>
+    <li><code>&lt;p&gt; ... &lt;/p&gt;</code> : Paragraphe</li>
+    <li><code>&lt;a href="url"&gt; ... &lt;/a&gt;</code> : Lien</li>
+    <li><code>&lt;img src="image.jpg" alt="description"&gt;</code> : Image</li>
+    <li><code>&lt;ul&gt; ... &lt;/ul&gt;</code> : Liste non ordonnée</li>
+    <li><code>&lt;li&gt; ... &lt;/li&gt;</code> : Élément de liste</li>
+  </ul>
+
+  <h2>4. Ajouter du style avec CSS</h2>
+  <p>CSS (Cascading Style Sheets) permet de personnaliser l’apparence des éléments HTML.</p>
+  <p>Exemple : changer la couleur du texte et la police du titre :</p>
+  <pre><code>h1 {
+  color: #f1c40f;
+  font-family: 'Arial Black', sans-serif;
+}
+  </code></pre>
+
+  <h2>5. Exemple complet : page HTML simple avec style CSS</h2>
+  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Page Stylée&lt;/title&gt;
+    &lt;style&gt;
+      body {
+        background: #f0f8ff;
+        font-family: Arial, sans-serif;
+        color: #333;
+        padding: 20px;
+      }
+      h1 {
+        color: #3498db;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Bonjour le monde !&lt;/h1&gt;
+    &lt;p&gt;Ceci est une page web simple avec du style CSS.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code></pre>
+
+  <footer>
+    &copy; 2025 EduSite - Cours HTML & CSS Débutant
+  </footer>
+
+</body>
+</html>

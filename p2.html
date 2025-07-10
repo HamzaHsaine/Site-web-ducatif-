@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cours JavaScript pour Tous</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      line-height: 1.6;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: white;
+      border-radius: 8px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      color: #16a085;
+    }
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    code {
+      font-family: 'Courier New', Courier, monospace;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    .example {
+      background: #ecf0f1;
+      border-left: 5px solid #16a085;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cours JavaScript pour Tous</h1>
+  
+  <p>Bienvenue dans ce cours d'introduction à JavaScript. Nous allons découvrir les bases qui vous permettront de rendre vos pages web interactives.</p>
+  
+  <h2>1. Syntaxe et Variables</h2>
+  <p>JavaScript utilise des variables pour stocker des données. Voici comment déclarer des variables :</p>
+  <pre><code>// Déclaration de variables
+let nom = "Alice";
+const age = 25;
+var ville = "Paris";</code></pre>
+  
+  <div class="example">
+    <strong>Exemple :</strong> Afficher un message dans la console<br/>
+    <pre><code>console.log("Bonjour, " + nom + " !");</code></pre>
+  </div>
+
+  <h2>2. Fonctions et Événements</h2>
+  <p>Les fonctions permettent de regrouper des instructions réutilisables :</p>
+  <pre><code>function saluer(nom) {
+  alert("Bonjour, " + nom + " !");
+}</code></pre>
+
+  <p>Vous pouvez appeler cette fonction ainsi :</p>
+  <pre><code>saluer("Alice");</code></pre>
+
+  <div class="example">
+    <strong>Exemple :</strong> Bouton avec un événement click<br/>
+    <button onclick="saluer('Alice')">Cliquez ici</button>
+  </div>
+
+  <h2>3. Manipulation du DOM</h2>
+  <p>Le DOM (Document Object Model) permet d’interagir avec la page HTML :</p>
+  <pre><code>// Modifier le contenu d’un élément
+document.getElementById('monTexte').textContent = "Texte mis à jour !";</code></pre>
+
+  <div class="example">
+    <p id="monTexte">Ce texte va changer.</p>
+    <button onclick="document.getElementById('monTexte').textContent = 'Texte mis à jour !'">Modifier le texte</button>
+  </div>
+
+  <h2>4. Introduction à AJAX</h2>
+  <p>AJAX permet de charger des données sans recharger la page :</p>
+  <pre><code>fetch('https://api.example.com/data')
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    console.log(data);
+  });</code></pre>
+
+  <p>Ceci est un aperçu rapide, le sujet sera développé plus tard.</p>
+
+  <p><em>Bonne continuation dans votre apprentissage de JavaScript !</em></p>
+
+</body>
+</html>
